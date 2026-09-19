@@ -23,7 +23,7 @@ def deposit(b):
 def withdraw(c):
     c=int(c)
     global balance
-    balance=balance-c
+    V=balance-c
     if c>=balance:
         return "Insefficent funds"
 
@@ -38,7 +38,7 @@ def loan(A,B):
     if A>=30000 and B>750:
         return "Loan accepted"
     else:
-        "Loan rejected"
+        return "Loan rejected"
 
 @app.route("/fd/<int:amount>/<int:years>")
 def fd(amount,years):
@@ -48,6 +48,15 @@ def fd(amount,years):
     Ma= amount+(amount*7*years/100)
 
     return f"{amount},{years},{Ma}"
+
+@app.route("/emi/<int:loan>/<int:month>")
+def emi(loan, month):
+    EMI=loan/month 
+    return f"Your EMI is {EMI}"
+
+@app.route("/account/<name>/<account_type>")
+def account(name, account_type):
+    return f"Name: {name}, account type:{account_type}, Bank: ABC Bank"
 
 if __name__=="__main__":
     app.run(debug=True)
