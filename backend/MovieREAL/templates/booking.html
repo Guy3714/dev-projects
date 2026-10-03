@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Ticket Booking</title>
+</head>
+<body>
+    <h1>Book Movie Tickets</h1>
+
+    <form action="/booking" method="post">
+        <label for="customer_name">Customer Name</label>
+        <input
+            type="text"
+            id="customer_name"
+            name="customer_name"
+            required
+        >
+        <br>
+
+        <label for="movie">Movie</label>
+        <select id="movie" name="movie" required>
+            <option value="" disabled selected>Select a movie</option>
+            <option value="Avengers">Avengers</option>
+            <option value="Interstellar">Interstellar</option>
+            <option value="Inception">Inception</option>
+            <option value="The Dark Knight">The Dark Knight</option>
+        </select>
+        <br>
+
+        <label for="tickets">Number of Tickets</label>
+        <input
+            type="number"
+            id="tickets"
+            name="tickets"
+            min="1"
+            required
+        >
+        <br>
+
+        <span>Ticket Type</span><br>
+        <input type="radio" id="regular" name="ticket_type" value="Regular" required>
+        <label for="regular">Regular - ₹200</label><br>
+
+        <input type="radio" id="premium" name="ticket_type" value="Premium">
+        <label for="premium">Premium - ₹350</label><br>
+
+        <input type="checkbox" id="snacks" name="snacks" value="Popcorn & Drink">
+        <label for="snacks">Popcorn &amp; Drink - ₹150</label><br>
+
+        <button type="submit">Book Tickets</button>
+    </form>
+</body>
+</html>
